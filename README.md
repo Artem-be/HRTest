@@ -17,6 +17,7 @@
 # Запуск Django API
 cd HRTest
 python manage.py migrate
+python manage.py createsuperuser  # Создание админа для Django admin
 python manage.py runserver
 
 # Запуск бота (в другом терминале)
@@ -27,7 +28,7 @@ python main.py
 ### Docker запуск
 ```bash
 # Создайте .env файл с переменными
-BOT_TOKEN=7529860720:AAGkJQJVtstoy6otHfcXJfx1NOv63wzLyuY
+BOT_TOKEN=ваш_токен_бота
 ADMIN_ID=ваш_telegram_id
 DJANGO_API_URL=http://localhost:8000/api/usercontrol/
 
@@ -44,6 +45,12 @@ docker compose -f docker-compose.yml up --build
 - `POST /api/usercontrol/log_activity/` - Логирование активности пользователя
 - `GET /api/usercontrol/daily_stats/` - Статистика за 24 часа
 - `GET /api/usercontrol/` - Список всех заявок
+
+## Django Admin
+После создания суперпользователя доступен админ-интерфейс:
+- `http://localhost:8000/admin/` - Админ-панель Django
+- **UserControl** - Просмотр всех заявок от пользователей
+- **UserActivity** - Просмотр активности пользователей
 
 ## Ежедневная отчётность
 ```bash

@@ -10,7 +10,7 @@ import logging
 import random
 from dotenv import load_dotenv
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from apscheduler.triggers.interval import IntervalTrigger
+from apscheduler.triggers.cron import CronTrigger
 
 load_dotenv()
 
@@ -237,13 +237,13 @@ async def main():
     
     scheduler.add_job(
         send_daily_report,
-        IntervalTrigger(minutes=1),
-        id='minute_report',
-        name='Минутный отчет'
+        CronTrigger(hour=9, minute=0),
+        id='daily_report',
+        name='Ежедневный отчет'
     )
     
     scheduler.start()
-    logger.info("Планировщик запущен - отчеты каждую минуту")
+    logger.info("Планировщик запущен - отчеты каждый день в 9:00")
     
     await dp.start_polling(bot)
 

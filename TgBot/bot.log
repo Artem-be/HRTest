@@ -1,0 +1,13 @@
+2025-08-05 16:03:10,167 - __main__ - INFO - Бот запускается...
+2025-08-05 16:03:10,168 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-08-05 16:03:10,168 - apscheduler.scheduler - INFO - Added job "Ежедневный отчет" to job store "default"
+2025-08-05 16:03:10,169 - apscheduler.scheduler - INFO - Scheduler started
+2025-08-05 16:03:10,169 - __main__ - INFO - Планировщик запущен - ежедневные отчеты в 9:00
+2025-08-05 16:04:03,505 - __main__ - INFO - Пользователь 1861447600 запустил бота
+2025-08-05 16:04:13,047 - __main__ - INFO - Пользователь 1861447600 запросил список услуг
+2025-08-05 16:04:22,676 - __main__ - INFO - Пользователь 1861447600 выбрал услугу: Создание Mini Apps
+2025-08-05 16:04:29,796 - __main__ - INFO - Пользователь 1861447600 ввел имя: Артем
+2025-08-05 16:04:38,503 - __main__ - INFO - Пользователь 1861447600 завершил форму: Артем, 79139112959, Создание Mini Apps
+2025-08-05 16:04:38,540 - __main__ - INFO - Попытка 1: Отправка заявки в Django API
+2025-08-05 16:04:38,585 - __main__ - INFO - Заявка успешно сохранена с попытки 1
+2025-08-05 16:11:22,214 - aiogram.dispatcher - WARNING - Received SIGTERM signal

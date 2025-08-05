@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  django:
+    build: ./HRTest
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=HRTest.settings
+    volumes:
+      - ./HRTest:/app
+    networks:
+      - app-network
+
+  bot:
+    build: ./TgBot
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - ADMIN_ID=${ADMIN_ID}
+      - DJANGO_API_URL=http://django:8000/api/usercontrol/
+    depends_on:
+      - django
+    volumes:
+      - ./TgBot:/app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge 
